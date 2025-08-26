@@ -2,7 +2,6 @@ import React, { useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Download, ExternalLink } from 'lucide-react';
-import Ballpit from '../components/Ballpit';
 import MagicBento from '../components/MagicBento';
 import VantaBirds from '../components/VantaBirds';
 import SplashCursor from '../components/SplashCursor';
@@ -11,7 +10,6 @@ import { isMobile, isLowEndDevice, reduceMotion } from '../utils/deviceUtils';
 // Hero Section with Vanta Birds Background
 const HeroSection = () => {
   const mobile = useMemo(() => isMobile(), []);
-  const lowEnd = useMemo(() => isLowEndDevice(), []);
   const shouldReduceMotion = useMemo(() => reduceMotion(), []);
 
   return (
