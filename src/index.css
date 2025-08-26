@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Import mobile CSS optimizations */
+@import './styles/mobile.css';
+
+/* Import scroll fixes */
+@import './styles/scroll-fix.css';
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -9,6 +15,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Improve mobile performance and scrolling */
+  overflow-x: hidden;
+  height: auto;
+  min-height: 100vh;
 }
 
 code {

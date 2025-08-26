@@ -1,0 +1,53 @@
+/* Mobile scroll fixes */
+html {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  height: auto !important;
+}
+
+body {
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  position: relative !important;
+  min-height: 100vh !important;
+  height: auto !important;
+}
+
+/* Fix viewport height on mobile browsers */
+:root {
+  --vh: 1vh;
+}
+
+/* Ensure all containers allow scrolling */
+#root {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+/* Fix for iOS Safari bouncing */
+@supports (-webkit-overflow-scrolling: touch) {
+  body {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Fix for Android Chrome */
+@media screen and (max-width: 768px) {
+  html, body {
+    touch-action: manipulation;
+    overscroll-behavior-y: auto;
+  }
+  
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+    overflow-y: auto !important;
+  }
+}
+
+/* Smooth scrolling for all devices */
+* {
+  scroll-behavior: smooth;
+}
