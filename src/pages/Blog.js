@@ -17,7 +17,7 @@ const Blog = () => {
               Blog
             </h1>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              Thoughts, tutorials, and insights about web development and technology
+              <span className="italic text-blue-300">“Cloud engineers don’t just build infrastructure—they build the future. Every line of code, every deployment, and every automation brings the world closer to limitless innovation.”</span>
             </p>
           </motion.div>
 
@@ -56,17 +56,11 @@ const Blog = () => {
             </ol>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center space-y-6"
-          >
+          <div className="text-center space-y-6">
             <div className="text-8xl mb-4">📝</div>
-            <h2 className="text-3xl font-bold text-white">Coming Soon</h2>
+            <h2 className="text-3xl font-bold text-white">Latest Posts</h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              I'm currently working on creating valuable content for developers. 
-              Stay tuned for tutorials, insights, and stories from my coding journey.
+              Check out my latest tutorials and insights on web development and cloud engineering.
             </p>
             <div className="flex items-center justify-center space-x-8 pt-8">
               <div className="flex items-center space-x-2 text-gray-400">
@@ -82,7 +76,7 @@ const Blog = () => {
                 <span>Tech Tips</span>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </>
