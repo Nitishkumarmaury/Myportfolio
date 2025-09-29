@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, Twitter } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, Github, Linkedin, Instagram } from 'lucide-react';
 import toast from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,28 +25,52 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate API call - replace with actual API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // EmailJS Configuration
+      const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+      const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+      const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        console.warn('EmailJS not configured. Using simulation mode.');
+        // Fallback to simulation for demo purposes
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        toast.success('Message sent successfully! (Demo mode - Configure EmailJS for real emails)');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        return;
+      }
+
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Nitish Kumar', // Your name
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
       
       toast.success('Message sent successfully! I\'ll get back to you soon.');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      toast.error('Failed to send message. Please try again.');
+      console.error('Email sending failed:', error);
+      toast.error('Failed to send message. Please try again or contact me directly.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: 'nitish@example.com', href: 'mailto:nitish@example.com' },
-    { icon: Phone, label: 'Phone', value: '+91 XXXXX XXXXX', href: 'tel:+91XXXXXXXXX' },
-    { icon: MapPin, label: 'Location', value: 'India', href: null }
+    { icon: Mail, label: 'Email', value: 'nitishmaurya6580@gmail.com', href: 'mailto:nitishmaurya6580@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 9555179269', href: 'tel:+919555179269' },
+    { icon: MapPin, label: 'Location', value: 'Punjab, India', href: null }
   ];
 
   const socialLinks = [
     { icon: Github, label: 'GitHub', href: 'https://github.com/Nitishkumarmaury' },
-    { icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/in/nitish-kumar-maury' },
-    { icon: Twitter, label: 'Twitter', href: 'https://twitter.com/nitish' }
+    { icon: Linkedin, label: 'LinkedIn', href: 'https://www.linkedin.com/in/nitish-kumar-a1a6b8249/' },
+    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/samir_maurya85?igsh=NWIzeDM2Y2c2ODQ4&utm_source=qr' }
   ];
 
   return (

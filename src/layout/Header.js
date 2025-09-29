@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Menu, X, Home, User, Briefcase, BookOpen, FileText, Mail, LogIn, Search } from 'lucide-react';
+import { Menu, X, Home, User, Briefcase, BookOpen, FileText, Mail, Search } from 'lucide-react';
+import logoImage from '../pages/Nitish Kumar.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,9 +43,13 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-pink-600 bg-clip-text text-transparent"
+              className="flex items-center"
             >
-              NK
+              <img 
+                src={logoImage} 
+                alt="Nitish Kumar Logo" 
+                className="h-10 w-10 object-cover rounded-full border-2 border-white/20"
+              />
             </motion.div>
           </Link>
 
@@ -73,15 +78,6 @@ const Header = () => {
               <button className="p-2 rounded-md text-gray-300 hover:text-white hover:bg-white/5 transition-colors">
                 <Search className="w-5 h-5" />
               </button>
-              
-              {/* Login */}
-              <Link
-                to="/login"
-                className="flex items-center space-x-1 px-4 py-2 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm font-medium transition-all"
-              >
-                <LogIn className="w-4 h-4" />
-                <span>Login</span>
-              </Link>
             </div>
           </div>
 
@@ -123,14 +119,6 @@ const Header = () => {
                   </Link>
                 );
               })}
-              <Link
-                to="/login"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center space-x-2 px-3 py-2 rounded-md bg-gradient-to-r from-blue-600 to-purple-600 text-white text-base font-medium"
-              >
-                <LogIn className="w-5 h-5" />
-                <span>Login</span>
-              </Link>
             </div>
           </motion.div>
         )}

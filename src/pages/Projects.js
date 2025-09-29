@@ -3,83 +3,107 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Search, ExternalLink, Github, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Mock project data - replace with API call
+// Real project data
 const projectsData = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, shopping cart, payment integration, and admin dashboard.",
+    title: "AWS Infrastructure as Code with Terraform",
+    description: "Modular Terraform configurations to provision secure, multi-AZ AWS infrastructure with 40+ resources, including VPC, subnets, EC2 Auto Scaling Groups, and RDS with version control.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "Node.js", "MongoDB", "Stripe", "JWT"],
-    category: "Full Stack",
-    github: "https://github.com/example/ecommerce",
-    demo: "https://example-ecommerce.com",
+    tags: ["Terraform", "AWS", "IaC", "VPC", "EC2", "RDS"],
+    category: "Cloud Infrastructure",
+    github: "https://github.com/Nitishkumarmaury/terraform-aws-infrastructure",
+    demo: null,
     featured: true,
     date: "2024-01-15"
   },
   {
     id: 2,
-    title: "AI Chat Application",
-    description: "Real-time chat application with AI integration using OpenAI API. Includes modern UI, message history, and smart responses.",
+    title: "Smart India Hackathon - MLOps Platform",
+    description: "Real-time MLOps platform on AWS achieving 40% cost reduction through optimized EKS configuration. Winner of ₹1 Lakh prize. Implemented GitOps workflow accelerating delivery by 10x.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "Socket.io", "OpenAI", "Tailwind"],
+    tags: ["AWS", "EKS", "MLOps", "Jenkins", "GitOps", "Python"],
     category: "AI/ML",
-    github: "https://github.com/example/ai-chat",
-    demo: "https://example-chat.com",
+    github: "https://github.com/Nitishkumarmaury/sih-2023",
+    demo: "https://sih-project.com",
     featured: true,
-    date: "2024-02-20"
+    date: "2023-12-01"
   },
   {
     id: 3,
-    title: "Portfolio Website",
-    description: "Modern portfolio website with shooting stars background, smooth animations, and responsive design.",
+    title: "New India Vibrant Hackathon - IoT Platform",
+    description: "Highly available IoT data ingestion platform on AWS using Terraform. Handles 10,000+ concurrent connections with 99.95% uptime. Winner of ₹2 Lakhs prize.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "Framer Motion", "Tailwind", "React Router"],
-    category: "Frontend",
-    github: "https://github.com/example/portfolio",
-    demo: "https://example-portfolio.com",
+    tags: ["AWS", "Terraform", "IoT", "High Availability", "Kubernetes"],
+    category: "Cloud Infrastructure",
+    github: "https://github.com/Nitishkumarmaury/iot-platform",
+    demo: null,
     featured: true,
-    date: "2024-03-10"
+    date: "2023-08-15"
   },
   {
     id: 4,
-    title: "Task Management App",
-    description: "Collaborative task management application with real-time updates, drag-and-drop interface, and team collaboration features.",
+    title: "AI Fitness Health Analyzer",
+    description: "AI-powered application analyzing user health data and body posture from video feeds to provide personalized fitness insights using computer vision and machine learning.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "Redux", "Firebase", "DnD Kit"],
-    category: "Full Stack",
-    github: "https://github.com/example/task-app",
-    demo: "https://example-tasks.com",
+    tags: ["Python", "OpenCV", "TensorFlow", "Computer Vision", "Health Tech"],
+    category: "AI/ML",
+    github: "https://github.com/Nitishkumarmaury/ai-fitness-analyzer",
+    demo: null,
     featured: false,
-    date: "2023-12-05"
+    date: "2024-02-20"
   },
   {
     id: 5,
-    title: "Weather Dashboard",
-    description: "Beautiful weather dashboard with charts, forecasts, and location-based weather data.",
+    title: "AWS Flask Application with Terraform and Ansible",
+    description: "End-to-end automated deployment of Python Flask web application on AWS using Terraform for infrastructure provisioning and Ansible for server configuration management.",
     image: "/api/placeholder/600/400",
-    tags: ["React", "Chart.js", "Weather API", "Geolocation"],
-    category: "Frontend",
-    github: "https://github.com/example/weather",
-    demo: "https://example-weather.com",
+    tags: ["AWS", "Terraform", "Ansible", "Flask", "Python", "Automation"],
+    category: "Cloud Infrastructure",
+    github: "https://github.com/Nitishkumarmaury/aws-flask-terraform",
+    demo: null,
     featured: false,
-    date: "2023-11-20"
+    date: "2023-11-10"
   },
   {
     id: 6,
-    title: "Blockchain Voting System",
-    description: "Secure voting system built on Ethereum blockchain with smart contracts and web3 integration.",
+    title: "Kubernetes Observability Stack",
+    description: "Deployed kube-prometheus-stack via Helm on GKE cluster with custom Grafana dashboards for monitoring application SLOs and resource utilization.",
     image: "/api/placeholder/600/400",
-    tags: ["Solidity", "Web3.js", "Ethereum", "React"],
-    category: "Blockchain",
-    github: "https://github.com/example/voting",
-    demo: "https://example-voting.com",
+    tags: ["Kubernetes", "Prometheus", "Grafana", "Helm", "GKE", "Observability"],
+    category: "Observability",
+    github: "https://github.com/Nitishkumarmaury/k8s-observability",
+    demo: null,
     featured: false,
-    date: "2023-10-15"
+    date: "2024-01-05"
+  },
+  {
+    id: 7,
+    title: "Accident Detection System",
+    description: "Real-time traffic accident detection system leveraging computer vision techniques on video streams for automated emergency response and traffic management.",
+    image: "/api/placeholder/600/400",
+    tags: ["Python", "OpenCV", "YOLO", "Computer Vision", "Real-time"],
+    category: "AI/ML",
+    github: "https://github.com/Nitishkumarmaury/accident-detection",
+    demo: null,
+    featured: false,
+    date: "2023-09-20"
+  },
+  {
+    id: 8,
+    title: "Smart Meter IoT Project",
+    description: "IoT-based smart metering solution for remote, real-time energy consumption monitoring and data analysis with cloud integration and mobile dashboard.",
+    image: "/api/placeholder/600/400",
+    tags: ["IoT", "Arduino", "AWS", "Python", "Real-time", "Energy"],
+    category: "IoT",
+    github: "https://github.com/Nitishkumarmaury/smart-meter",
+    demo: null,
+    featured: false,
+    date: "2023-07-15"
   }
 ];
 
-const categories = ["All", "Full Stack", "Frontend", "AI/ML", "Blockchain"];
+const categories = ["All", "Cloud Infrastructure", "AI/ML", "IoT", "Observability"];
 
 // Project Card Component
 const ProjectCard = ({ project, index }) => {

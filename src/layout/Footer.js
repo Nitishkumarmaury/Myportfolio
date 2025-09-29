@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaEnvelope, FaTwitter } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaInstagram } from 'react-icons/fa';
 import { Heart } from 'lucide-react';
 
 const Footer = () => {
   const socialLinks = [
     { icon: FaGithub, href: 'https://github.com/Nitishkumarmaury', label: 'GitHub' },
-    { icon: FaLinkedin, href: 'https://linkedin.com/in/nitish-kumar-maury', label: 'LinkedIn' },
-    { icon: FaEnvelope, href: 'mailto:nitish@example.com', label: 'Email' },
-    { icon: FaTwitter, href: 'https://twitter.com/nitish', label: 'Twitter' },
+    { icon: FaLinkedin, href: 'https://www.linkedin.com/in/nitish-kumar-a1a6b8249/', label: 'LinkedIn' },
+    { icon: FaInstagram, href: 'https://www.instagram.com/samir_maurya85?igsh=NWIzeDM2Y2c2ODQ4&utm_source=qr', label: 'Instagram' },
+    { icon: FaEnvelope, href: 'mailto:nitishmaurya6580@gmail.com', label: 'Email' },
   ];
 
   const sitemapLinks = [
@@ -30,7 +30,7 @@ const Footer = () => {
               Nitish Kumar
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Full-stack developer passionate about creating innovative solutions and sharing knowledge through code.
+              Award-winning Cloud Platform Engineer specializing in Site Reliability Engineering (SRE) and building scalable, high-availability cloud infrastructure.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => {
@@ -73,13 +73,13 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">Get in Touch</h3>
             <div className="space-y-2">
               <p className="text-gray-300 text-sm">
-                📧 nitish@example.com
+                📧 nitishmaurya6580@gmail.com
               </p>
               <p className="text-gray-300 text-sm">
-                📱 +91 XXXXX XXXXX
+                📱 +91 9555179269
               </p>
               <p className="text-gray-300 text-sm">
-                📍 India
+                📍 Punjab, India
               </p>
             </div>
           </div>

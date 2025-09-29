@@ -4,39 +4,47 @@ import { Download, MapPin, Calendar, Code, Coffee, Heart } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { category: "Frontend", items: ["React", "Vue.js", "TypeScript", "Tailwind CSS", "Framer Motion"] },
-    { category: "Backend", items: ["Node.js", "Express.js", "Python", "PostgreSQL", "MongoDB"] },
-    { category: "Tools", items: ["Git", "Docker", "AWS", "Vercel", "Figma"] },
-    { category: "Learning", items: ["Next.js", "GraphQL", "Web3", "Machine Learning"] }
+    { category: "Cloud Platforms", items: ["AWS (EKS, Lambda, EC2, S3, RDS)", "GCP (GKE)", "Azure DevOps"] },
+    { category: "IaC & Config", items: ["Terraform", "Ansible", "Packer"] },
+    { category: "CI/CD & Automation", items: ["Jenkins", "GitHub Actions", "Bash", "Python (Boto3)"] },
+    { category: "Containerization", items: ["Docker", "Kubernetes", "Helm"] },
+    { category: "Observability & SRE", items: ["Prometheus", "Grafana", "Splunk"] },
+    { category: "Languages", items: ["Python", "Bash", "YAML", "HCL"] }
   ];
 
   const experience = [
     {
-      title: "Senior Full Stack Developer",
-      company: "Tech Solutions Inc.",
-      period: "2023 - Present",
-      description: "Lead developer for multiple client projects, specializing in React and Node.js applications."
+      title: "Cloud Engineering Intern",
+      company: "CloudDevOpsHub",
+      period: "Jun 2025 - Present · 4 mos",
+      description: "CloudDevOps is a comprehensive educational platform dedicated to closing the skills gap in cloud computing and DevOps. Working with cutting-edge technologies including AWS, Azure, Docker, Kubernetes, Terraform, Jenkins, and AIOps integration. Hands-on experience with CI/CD pipelines, infrastructure automation, and cloud security implementations."
     },
     {
-      title: "Frontend Developer",
-      company: "Creative Agency",
-      period: "2022 - 2023",
-      description: "Developed responsive web applications and interactive user interfaces."
+      title: "Lead Cloud & AI Engineer",
+      company: "Smart India Hackathon Winner",
+      period: "Dec 2023 - Present",
+      description: "Engineered a real-time MLOps platform on AWS, achieving 40% reduction in cloud costs through optimized EKS configuration. Implemented GitOps workflow with Jenkins, accelerating feature delivery by 10x."
     },
     {
-      title: "Junior Developer",
-      company: "StartupXYZ",
-      period: "2021 - 2022",
-      description: "Built and maintained web applications while learning modern development practices."
+      title: "Cloud Infrastructure Architect",
+      company: "New India Vibrant Hackathon Winner",
+      period: "Aug 2023",
+      description: "Deployed highly available IoT data ingestion platform on AWS using Terraform, handling 10,000+ concurrent device connections with 99.95% uptime and single-digit millisecond latency."
+    },
+    {
+      title: "Cloud Platform Engineer",
+      company: "Independent Projects",
+      period: "2022 - Present",
+      description: "Built production-ready infrastructure using Terraform, Kubernetes, and CI/CD pipelines. Specialized in AWS services, observability with Prometheus/Grafana, and Python automation."
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Technology in Computer Science",
-      institution: "Technical University",
-      period: "2017 - 2021",
-      description: "Focused on software engineering, algorithms, and web development."
+      degree: "Bachelor of Engineering in Computer Science",
+      institution: "Chandigarh University, Punjab",
+      period: "2022 - 2026",
+      description: "Specialization in Cloud Computing. Co-inventor of patent application 'Automated Plants Water System For Road Dividers' (Application No: 202311064721)."
     }
   ];
 
@@ -71,20 +79,13 @@ const About = () => {
                 <h2 className="text-3xl font-bold text-white mb-6">My Story</h2>
                 <div className="space-y-4 text-gray-300 leading-relaxed">
                   <p>
-                    Hello! I'm Nitish, a passionate full-stack developer with over 3 years of experience 
-                    creating digital experiences that make a difference. My journey in technology started 
-                    during my college years when I wrote my first "Hello World" program and fell in love 
-                    with the power of code.
+                    Hello! I'm Nitish Kumar, an award-winning Cloud Platform Engineer with ₹3 Lakhs in national competition funding for architecting high-availability systems. My journey in cloud computing began during my engineering studies at Chandigarh University, where I developed a passion for building scalable, resilient infrastructure.
                   </p>
                   <p>
-                    I specialize in building modern web applications using React, Node.js, and various 
-                    cloud technologies. What drives me most is solving complex problems and turning ideas 
-                    into reality through clean, efficient code.
+                    I specialize in Site Reliability Engineering (SRE) principles, building immutable infrastructure with Terraform, and orchestrating containerized microservices on Kubernetes. My expertise spans across AWS, GCP, and Azure, with proven ability to drive performance gains and cost optimization through robust CI/CD practices.
                   </p>
                   <p>
-                    When I'm not coding, you can find me exploring new technologies, contributing to 
-                    open-source projects, or sharing my knowledge through blog posts and tutorials. 
-                    I believe in continuous learning and staying updated with the latest trends in web development.
+                    When I'm not architecting cloud solutions, you can find me contributing to open-source projects, participating in hackathons (where I've won ₹3 Lakhs in prize money), or exploring the latest in MLOps and automation. I believe in continuous learning and sharing knowledge with the developer community.
                   </p>
                 </div>
               </motion.section>
@@ -145,15 +146,15 @@ const About = () => {
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-gray-300">
                     <MapPin className="w-5 h-5 text-blue-400" />
-                    <span>India</span>
+                    <span>Punjab, India</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Calendar className="w-5 h-5 text-blue-400" />
-                    <span>3+ Years Experience</span>
+                    <span>4th Year Student (2022-2026)</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Code className="w-5 h-5 text-blue-400" />
-                    <span>Full Stack Developer</span>
+                    <span>Cloud Computing Student</span>
                   </div>
                   <div className="flex items-center space-x-3 text-gray-300">
                     <Coffee className="w-5 h-5 text-blue-400" />
